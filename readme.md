@@ -1,70 +1,78 @@
-# 声明
+# EcoFuse™ 开放集成平台
 
-## 系统性
+![版本](https://img.shields.io/badge/版本-1.0.0-blue.svg)
+![许可证](https://img.shields.io/badge/许可证-MIT-green.svg)
+![构建状态](https://img.shields.io/badge/构建-通过-success.svg)
 
-思想之火花如同茫茫宇宙之星辰，散落着，毫无可用价值。
+LEO，2025 年 11 月 15 日
 
-## github.com访问不稳定
+> 开放集成平台正在改变工业组织的游戏规则，通过无缝融合自动化硬件、工业软件、人工智能和SaaS平台（即使它们来自不同供应商），带来全新数字化灵活性和效率。
 
-### 原因
+**EcoFuse™ 开放集成平台**
+开放式全面集成软件
 
-- 路由节点不稳定
-  
-  GitHub 服务器均位于海外，需要经过一系列的路由器和网络节点。路由节点不稳定会导致数据包丢失、延迟增加、甚至是连接断开等问题。
+我们的应用集成软件专为各类新型数字能源场景中的 EMS 能源管理系统设计，适配源网荷储一体化、绿电直连、独立储能、虚拟电厂、智能微电网等创新模式。一套融合设备自动化集成、应用集成、人工智能集成的工业与能源数字化解决方案，旨在提高您的灵活性、效率和盈利能力。
 
-- DNS 污染
-  通常是出于审查或广告推广的目的，恶意修改 DNS 查询结果，影响正常访问。
+## EcoFuse™ 开放集成平台的优势
 
-### 解决方法1： 修改HOSTS文件
+高达 70%
 
-(1) 获取GitHub真实IP
+提高工程效率
 
-通过https://www.ipaddress.com/
+10+
 
-```()
-github.com
-assets-cdn.github.com
-github.global.ssl.fastly.net
-api.github.com
-raw.githubusercontent.com
-```
+行业解决方案
 
-或者，使用命令：
+30%
 
-```()
-nslookup github.com 8.8.8.8  # 使用 Google DNS 查询
-```
+降低系统投资成本
 
-(2) 修改Hosts文件
+## 产品特点
 
-```()
-# https://www.ipaddress.com/website/github.com/
-140.82.112.3 github.com
+- **高效低代码集成**：基于模型与低代码技术，在数小时内完成产品集成工作，大幅缩短传统集成所需的数周时间，支持通过开放 API 读写数据，适配 ERP、B2B、B2C 及人工智能代理等多种场景。
+- **丰富集成支持**：适配工业控制、IoT、MES / MOM、ERP、互联网服务、CRM、在线服务、小程序等多个领域的应用集成，支持OpenAPI、等标准协议，定制化开发，保留现有设备价值。
+- **数据隐私与安全**：单租户部署和自托管模式，适配数据私有化需求的用户，支持 HTTPS + JSON 通讯形式与 OAuth、JWT 等安全协议，以及完备的 ACL 访问控制列表、RBAC 角色型访问控制与加密机制，保障数据隐私与安全。
+- **便捷部署**：支持部署到边缘计算、私有云或公有云，支持国产系统环境。
+- **高可用性与监控支持**：分布式计算的冗余机制，详细的性能指标监视和日志
+- **可扩展**：插件系统覆盖数据采集、处理、存储、应用和人机交互等过程，支持自定义数据源、控制逻辑、业务组件和个性化界面。
 
-# https://www.ipaddress.com/website/assets-cdn.github.com/
-185.199.108.153 assets-cdn.github.com
-185.199.109.153 assets-cdn.github.com
-185.199.110.153 assets-cdn.github.com
-185.199.111.153 assets-cdn.github.com
+## 产品 及 功能
 
-# https://www.ipaddress.com/site/fastly.net // github.global.ssl.fastly.net
-151.101.1.6 github.global.ssl.fastly.net
-151.101.65.6   github.global.ssl.fastly.net
-151.101.129.6   github.global.ssl.fastly.net
-151.101.193.6   github.global.ssl.fastly.net
-```
+- **EcoFuse SCADA**：「EF-SCADA」是一款可靠、灵活、高性能的工业过程客户监控和数据采集(SCADA)软件解决方案。
+- **EcoFuse PCS**：模块化的过程控制系统，集成自动化、信息化及控制技术，已成功应用于过程工业生产装置。从运行数据采集PDC、过程控制技术PCT、批量系统BDS，到全方位、不受地域限制的生产管理（MES）功能，以及企业资源计划（ERP）、实验室信息管理系统（LIMS）和维护系统的集成，所有这些流程均可通过 EcoFuse PCS 进行持续控制与监控。
+- **EcoFuse iPaaS 系统平台**：「EF-iPaaS」是一个可扩展的工业应用集成软件平台，用于监控、SCADA 和 MES 应用，将过程与企业业务系统集成在一起。
+- **EcoFuse MES**：MES模块。
+- **EcoFuse Energy Advisor**：EcoFuse 能源顾问软件是
+- **Energy Expert Twin**：能源专家数字孪生软件是面向源网荷储的模拟、仿真和数字孪生软件套件。它提供直观的环境，具有拖放能源模型组件、虚拟现实/增强现实界面和以应用程序为中心的库。采用Python高级编程语言，可以自定义开发和添加各种模型组件，并支持 OPC UA、 IEC60870-5-104 与 MQTT 协议，无缝集成到 「Energy Management System」和 「Energy Advisor」中。
 
-(3) 刷新 DNS 缓存：
+## 解决方案
 
-- Windows：ipconfig /flushdns
-- macOS/Linux：sudo dscacheutil -flushcache 或 sudo systemd-resolve --flush-caches
+- 源网荷储一体化
+- 绿电直连项目
 
-### 解决方法2：  使用加密 DNS 服务
+## EcoFuse™ 开放集成平台成功案例
 
-通过加密 DNS（如 DNS-over-HTTPS 或 DNS-over-TLS）避免解析被劫持。
-推荐方案：
-Cloudflare DNS（1.1.1.1）或 Google DNS（8.8.8.8）：
-手动设置设备的 DNS 地址。
+以下是一个「绿电直联 + 源网荷储一体化」管控平台的案例，展示如何使用 EcoFuse 套件建设运营：
 
-DNSCrypt 或 DoH/DoT 工具：
-使用 AdGuard DNS、NextDNS 等支持加密的 DNS 服务。
+## 即刻开启您的未来
+
+在当今快节奏的商业环境中保持领先意味着拥抱变革。这正是 EcoFuse™ 开放集成平台的价值所在。
+
+- 联系销售人员
+
+## 贡献指南
+
+我们欢迎各种形式的贡献！请查看贡献指南了解如何参与项目开发。
+
+## 需要帮助？
+
+模块化过程控制系统 EcoFuse，为全球所有流程行业提供开放集成技术、数字化解决方案和集成了 MES 功能的过程控制系统。我们的团队架构是专门为客户量身定制，以满足高耗能、综合能源及新能源等行业的需求。电气工程师、计算机专家、过程工程师、酿酒师和食品技术专家在公司的特定领域展开合作。将行业知识与实际工程相结合，为全球各行各业开发理想的解决方案。
+
+- 文档
+- 联系方式
+- 问题跟踪：GitHub Issues
+- Slack频道：#dataflow
+
+
+http://jgraph.github.io/mxgraph/javascript/examples/grapheditor/www/index.html
+
