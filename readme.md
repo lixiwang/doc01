@@ -1,70 +1,133 @@
-# READ
-2
-## 系统性
+# AiFuse 应用集成平台
 
-思想之火花如同茫茫宇宙之星辰，散落着，毫无可用价值。
+[TOC]
 
-## github.com访问不稳定
+融合API集成、应用集成、数据集成的AI应用平台
 
-### 原因
+## 解决痛点
 
-- 路由节点不稳定
-  
-  GitHub 服务器均位于海外，需要经过一系列的路由器和网络节点。路由节点不稳定会导致数据包丢失、延迟增加、甚至是连接断开等问题。
+### 信息孤岛、集成复杂度高
 
-- DNS 污染
-  通常是出于审查或广告推广的目的，恶意修改 DNS 查询结果，影响正常访问。
+企业拥有众多不同时期、不同供应商、不同技术架构层次的应用系统，系统之间缺乏标准的数据交换和集成方法，导致应用无法互联、数据无法共享。
 
-### 解决方法1： 修改HOSTS文件
+### 系统集成效率及成本问题
 
-(1) 获取GitHub真实IP
+传统系统集成复杂性高，耗时费力，工程实施容易推诿扯皮。
 
-通过https://www.ipaddress.com/
+## 基本概念
 
-```()
-github.com
-assets-cdn.github.com
-github.global.ssl.fastly.net
-api.github.com
-raw.githubusercontent.com
-```
+**系统**：
 
-或者，使用命令：
+一个为了达成某种目标（功能），由一系列相互关联（结构）的部件组成，并与其外部环境持续进行交换的实体。
 
-```()
-nslookup github.com 8.8.8.8  # 使用 Google DNS 查询
-```
+提供特定功能的实体，由多个部件组成，按照特定结构组织。
+系统与环境进行信息、物质或能量的交换。
+环境通常是多个系统。
 
-(2) 修改Hosts文件
+根据交换实体可以将系统进行分类：
 
-```()
-# https://www.ipaddress.com/website/github.com/
-140.82.112.3 github.com
+- 信息物理系统（cyber physical systems，简称CPS）作为计算进程和物理进程的统一体，是集成计算、通信与控制于一体的下一代智能系统。
+- 信息系统。
+- 物理系统。
 
-# https://www.ipaddress.com/website/assets-cdn.github.com/
-185.199.108.153 assets-cdn.github.com
-185.199.109.153 assets-cdn.github.com
-185.199.110.153 assets-cdn.github.com
-185.199.111.153 assets-cdn.github.com
+根据应用场景，对系统进行分类：
 
-# https://www.ipaddress.com/site/fastly.net // github.global.ssl.fastly.net
-151.101.1.6 github.global.ssl.fastly.net
-151.101.65.6   github.global.ssl.fastly.net
-151.101.129.6   github.global.ssl.fastly.net
-151.101.193.6   github.global.ssl.fastly.net
-```
+- 管理信息系统
+- 控制系统
+- 互联网平台系统
+- AI大模型服务系统
 
-(3) 刷新 DNS 缓存：
+**插件**：
 
-- Windows：ipconfig /flushdns
-- macOS/Linux：sudo dscacheutil -flushcache 或 sudo systemd-resolve --flush-caches
+插件是一种对系统能进行扩展的机制，是一种相对独立的模块。插件的运行依赖于系统框架或结构的约定，
 
-### 解决方法2：  使用加密 DNS 服务
+**接口**：
 
-通过加密 DNS（如 DNS-over-HTTPS 或 DNS-over-TLS）避免解析被劫持。
-推荐方案：
-Cloudflare DNS（1.1.1.1）或 Google DNS（8.8.8.8）：
-手动设置设备的 DNS 地址。
+接口是系统与系统之间、部件与部件之间，
+1.
 
-DNSCrypt 或 DoH/DoT 工具：
-使用 AdGuard DNS、NextDNS 等支持加密的 DNS 服务。
+**人机接口**：
+
+人机接口（Human Machine Interface，HMI）
+
+代理封装
+
+5. Agent。
+6. 集成计算任务。协议通道、消息传递、简单数据ETL、MCP、
+7. 集成基础设施，承载消息、协议、数据、处理等集成计算任务的基础系统。
+8. **集成控制中心**，Integer Controlling Center，用于对业务系统元信息、集成基础设施、授权、OpenAPI、融合APP、集成状态、集成日志等进行分域控制与一站式管理。
+9. 浏览器、传感器、控制器、控制系统、数据库
+10. 人在系统，代理
+11. UPnP（通用即插即用）
+12. IND文件生成与集成描述信息注册，供集成控制中心提供识别设备能力。
+13. 简单服务发现协议（SSDP，Simple Service Discovery Protocol）是一种应用层协议，是构成通用即插即用(UPnP)技术的核心协议之一。
+14. 设备授权委托协议。委托设备授权受托设备代理资源权限管理的安全管理协议。
+15. Web SSH客户端。一种创新的远程管理工具，它让你能够在浏览器中直接访问和管理远程服务器。
+16. ssh授权委托。
+
+本地Session / 零信任权限控制 / Token
+
+底座
+
+### 基础应用
+
+渲染服务
+
+- 生成HTML/VUE
+
+数据处理（Docker）
+
+- 协议
+- 采集
+- API
+
+数据实时库
+
+- Prosys OPC UA Modbus Server
+- h-opc-master是一个流行的开源OPC UA项目的代表
+
+消息
+
+- MQTT Broker
+- 短信SMS
+
+数据存储
+
+- MySQL
+- TDEngine
+
+HMI
+
+- 微信小程序
+- H5
+- 工业HMI
+- 浏览器（HTML）
+
+流程服务
+
+- 设计
+
+### 授权委托
+
+#### 安装UPnP服务
+
+首次安装SSDP服务，即可访问HTTPS。使用初始密码，登录并修改资源管理密码。
+
+#### 收集资源信息
+
+- 资源信息：自动检查获得基础信息，包括CPU架构、操作系统、docker等版本。
+
+#### 授权委托协议
+
+- 添加授权：SSH无密码访问，将 `平台节点公钥` 添加到资源SSH服务器的~/.ssh/authorized_keys
+- 自动化代码部署：使用 `‌rsync‌` 或 `Ansible`
+
+## 平台功能
+
+1. 融合集成
+iPaaS集成平台是融合了应用集成、API集成、数据集成、消息集成等为一体的一站式集成平台。
+
+2. 多组织管控
+具备多租户/多组织能力，实现统一管控，分布式集成，有效解决集团型企业多分子公司集成、多工厂集成、云上云下集成。
+
+数据集成过程透明化监控，出现问题及时预警，并及时解决，有效保障业务集成的连续性。
